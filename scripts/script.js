@@ -46,7 +46,7 @@ function coinBtn(){
     document.getElementById("coins").innerHTML = coins;
 }
 function joyBtn(){
-    if (joy_point===100) {
+    if (joy_point >= 100) {
         alert("Он не хочет играться")
     } else{
         if (coins >= 10) {
@@ -61,7 +61,7 @@ function joyBtn(){
     }
 }
 function eatBtn(){
-    if (eat_point===100) {
+    if (eat_point >= 100) {
         alert("Он не голоден")
     } else{
         if (coins >= 5) {
@@ -75,7 +75,7 @@ function eatBtn(){
     }
 }
 function healBtn(){
-    if (heal_point===100) {
+    if (heal_point >= 100) {
         alert("Он не больной")
     } else{
         if (coins >= 15) {
