@@ -1,29 +1,29 @@
-let coins = 0; 
+let coins = 0;  //0
 let joy_point = 100;
 let eat_point = 100;
 let heal_point = 100;
-
+let textWindow = document.getElementById("text-window");
 function alertBtn() { 
     let a = true;
     let b = true;
     let text = document.getElementById("text");
     text.style.transform = ("translateY(-5vh)");
 
-    let imgage = document.getElementById("imgage");
+    let image = document.getElementById("image");
     let name = window.prompt("Введи имя животного");
     document.getElementById("name").innerHTML = name;
     do{
         let type = window.prompt("Выберите тип животного\n 1-кот\n 2-собака\n 3-мышь");
         if (type == 1) {
-            imgage.innerHTML="<img src='img/cat.png'>";
+            image.innerHTML="<img src='img/cat.png'>";
             alert("Привет " + name);
             a=false;
         } else if (type == 2) {
-            imgage.innerHTML="<img src='img/dog.png'>";
+            image.innerHTML="<img src='img/dog.png'>";
             alert("Привет " + name);
             a=false;
         } else if (type == 3) {
-            imgage.innerHTML="<img src='img/maus.png'>";
+            image.innerHTML="<img src='img/maus.png'>";
             alert("Привет " + name);
             a=false;
         } else{
@@ -33,12 +33,9 @@ function alertBtn() {
     } while(a===true)
     let buttonsBotom = document.getElementById("buttons-bottom");
     buttonsBotom.style.transform = ("translateY(-1%)");
-    setInterval(() => subtraction(), 3000);
-    
+    setInterval(() => subtraction(), 3000);   
     document.getElementById("heal_point").innerHTML = heal_point;
-    
     document.getElementById("eat_point").innerHTML = eat_point;
-    
     document.getElementById("joy_point").innerHTML = joy_point;
 }
 function coinBtn(){
@@ -47,7 +44,8 @@ function coinBtn(){
 }
 function joyBtn(){
     if (joy_point >= 100) {
-        alert("Он не хочет играться")
+        textWindow = 'Он не хочет играть'
+        windowAlertText();
     } else{
         if (coins >= 10) {
             joy_point = joy_point + 2;
@@ -55,14 +53,14 @@ function joyBtn(){
             coins = coins - 10;
             document.getElementById("coins").innerHTML = coins;
         } else{
-            alert("Не достаточно монет")
-
+            windowAlertCoin();
         }
     }
 }
 function eatBtn(){
     if (eat_point >= 100) {
-        alert("Он не голоден")
+        textWindow = 'Он не голоден'
+        windowAlertText();
     } else{
         if (coins >= 5) {
             eat_point ++;
@@ -70,13 +68,14 @@ function eatBtn(){
             coins = coins - 5;
             document.getElementById("coins").innerHTML = coins;
         } else{
-            alert("Не достаточно монет")
+            windowAlertCoin();
         }
     }
 }
 function healBtn(){
     if (heal_point >= 100) {
-        alert("Он не больной")
+        textWindow = 'Он не болеет'
+        windowAlertText();
     } else{
         if (coins >= 15) {
             heal_point = heal_point + 3;
@@ -84,7 +83,7 @@ function healBtn(){
             coins = coins - 15;
             document.getElementById("coins").innerHTML = coins;
         } else{
-            alert("Не достаточно монет")
+            windowAlertCoin(); 
         }
     }
 }
@@ -99,4 +98,17 @@ function subtraction(){
         alert("Молодец. Твой питомец сдох")
         location.reload()
     }
+}
+function windowAlertText() {
+    document.getElementById("text-window").innerHTML = textWindow;
+    let windowAlert = document.getElementById("window-alert")
+    windowAlert.style = ("z-index: 1; opacity: 1; transition: .5s");
+    setTimeout(() => windowAlert.style = ("z-index: -1; opacity 0; transition: .5s"), 3000);
+}
+function windowAlertCoin() {
+    textWindow = 'Не достаточно денег';
+    document.getElementById("text-window").innerHTML = textWindow;
+    let windowAlert = document.getElementById("window-alert")
+    windowAlert.style = ("z-index: 1; opacity: 1; transition: .5s; background-color: #FF3D3D");
+    setTimeout(() => windowAlert.style = ("z-index: -1; opacity 0; transition: .5s"), 3000);
 }

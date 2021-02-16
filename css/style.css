@@ -30,6 +30,7 @@ body{
 	flex-flow: column nowrap;
 	width: 500px;
 	height: 500px;
+	position: relative;
 }
 .info-top{
 	display: flex;
@@ -62,7 +63,7 @@ body{
 .info-top-right-in p{
 	margin-right: 5px;
 }
-#imgage{
+#image{
 	display: flex;
 	justify-content: center;
 	height: 70%;
@@ -73,7 +74,7 @@ body{
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	height: 10%;
+	height: 15%;
 	transform: translateY(100%);
 }
 #buttons-bottom button{
@@ -100,4 +101,18 @@ body{
 }
 #buttons-bottom button:first-child:hover{
 	background-color: #EBC703;
+}
+#window-alert{
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	left: 10px;
+	top: 20%;
+	color: #fff;
+	font-size: 1.1em;
+	letter-spacing: 2px;
+	background-color: #5F4EFF;
+	border-radius: 7px;
+	padding: 3px 5px;
+	cursor: default;
 }
