@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<title>Tamagochi</title>
+</head>
+<body>
+	<p id="text" onclick="alertBtn()">Что бы начать нажми на меня</p>
+	<div class="content">
+		<div class="contetn-in">
+			<div class="info-top">
+				<div class="info-top-left">
+					<div class="info-top-left-in">
+						<p>Радость</p><span id="joy_point">-</span>
+					</div>
+					<div class="info-top-left-in">
+						<p>Голод</p><span id="eat_point">-</span>
+					</div>
+					<div class="info-top-left-in">
+						<p>Здоровье</p><span id="heal_point">-</span>
+					</div>
+				</div>
+				<div class="info-top-right">
+					<div class="info-top-right-in">
+						<p id="coins-text">$</p><span id="coins">0</span>
+					</div>
+					<div class="info-top-right-in">
+						<p>Имя</p><span id="name">-</span>
+					</div>
+				</div>
+			</div>
+			<div id="imgage"></div>
+			<div id="buttons-bottom">
+				<button onclick="coinBtn()" >$</button>
+				<button onclick="joyBtn()">Играть 10$</button>
+				<button onclick="eatBtn()">Кормить 5$</button>
+				<button onclick="healBtn()">Лечить 15$</button>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>
