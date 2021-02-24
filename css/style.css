@@ -1,10 +1,10 @@
 *{
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden; 
+	overflow-x: hidden;
 	overflow:  hidden;
 }
-body{
+#body{
 	background-color: #5F4EFF;
 }
 #text{
@@ -21,6 +21,7 @@ body{
 }
 .content{
 	display: flex;
+	position: relative;
 	justify-content: center;
 	align-items: center;
 	height: 95vh;
@@ -46,7 +47,7 @@ body{
 .info-top-left-in{
 	display: flex;
 	justify-content: flex-start;
-	margin: 10px; 
+	margin: 10px;
 }
 .info-top-left-in p{
 	margin-right: 5px;
@@ -58,7 +59,7 @@ body{
 .info-top-right-in{
 	display: flex;
 	justify-content: flex-end;
-	margin: 10px; 
+	margin: 10px;
 }
 .info-top-right-in p{
 	margin-right: 5px;
@@ -76,8 +77,10 @@ body{
 	align-items: center;
 	height: 15%;
 	transform: translateY(100%);
+	transition: .5s;
 }
 #buttons-bottom button{
+	cursor: pointer;
 	width: 80px;
 	height: 40px;
 	outline: none;
@@ -102,6 +105,9 @@ body{
 #buttons-bottom button:first-child:hover{
 	background-color: #EBC703;
 }
+#buttons-bottom button:last-child{
+	width: 40px;
+}
 #window-alert{
 	position: absolute;
 	z-index: -1;
@@ -115,4 +121,66 @@ body{
 	border-radius: 7px;
 	padding: 3px 5px;
 	cursor: default;
+}
+
+#shop-block{
+	position: absolute;
+	width: 300px;
+	top: 50px;
+	left: 5px;
+	height: 430px;
+	background-color: grey;
+	z-index: 2;
+	opacity: 0.8;
+	border-radius: 8px;
+	transform: translateX(-105%);
+	transition: .5s;
+}
+#shop-block h1{
+	margin: 10px;
+	font-size: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+.shop-in-block{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	font-size: 20px;
+}
+.shop-container{
+	display: flex;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+.shop-container:nth-child(1){
+	background-color: #005AFF;
+}
+.shop-container:nth-child(2){
+	background-color: #FF00A8;
+}
+.shop-container:nth-child(3){
+	background-color: #7EFF00;
+}
+.shop-container:nth-child(4){
+	background-color: #D07575;
+}
+.shop-container:nth-child(5){
+	background-color: #00F0FF;
+}
+.shop-container:nth-child(6){
+	background-color: #BA00FF;
+}
+.shop-container:nth-child(7){
+	background-color: #485D91;
+}
+.shop-container:nth-child(8){
+	background-color: #FF688F;
 }

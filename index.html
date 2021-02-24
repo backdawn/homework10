@@ -7,9 +7,24 @@
 	<script type="text/javascript" src="scripts/script.js"></script>
 	<title>Tamagotchi</title>
 </head>
-<body>
+<body id="body">
 	<p id="text" onclick="alertBtn()">Что бы начать нажми на меня</p>
 	<div class="content">
+		<div id="shop-block">
+			<h1>Фон</h1>
+			<div class="shop-in-block">
+
+				<button class="shop-container" onclick="shopBlue()">50$</button> 
+				<button class="shop-container" onclick="shopPink()">50$</button>
+				<button class="shop-container" onclick="shopLime()">50$</button>
+				<button class="shop-container" onclick="shopHalfRed()">50$</button>
+				<button class="shop-container" onclick="shopTurquoise()">50$</button>
+				<button class="shop-container" onclick="shopPurple()">50$</button>
+				<button class="shop-container" onclick="shopWeakBlue()">50$</button>
+				<button class="shop-container" onclick="shopHalfRedTwo()">50$</button>
+
+			</div>
+		</div>
 		<div class="contetn-in">
 			<div class="info-top">
 				<div class="info-top-left">
@@ -38,6 +53,7 @@
 				<button onclick="joyBtn()">Играть 10$</button>
 				<button onclick="eatBtn()">Кормить 5$</button>
 				<button onclick="healBtn()">Лечить 15$</button>
+				<button onclick="shopBtn()">&#129530;</button>
 			</div>
 			<div id="window-alert"><p id="text-window"></p></div>
 		</div>

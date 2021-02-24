@@ -1,7 +1,9 @@
-let coins = 0;  //0
+let coins = 0;
+let pause = 0;
 let joy_point = 100;
 let eat_point = 100;
 let heal_point = 100;
+let interval;
 let textWindow = document.getElementById("text-window");
 function alertBtn() { 
     let a = true;
@@ -33,13 +35,15 @@ function alertBtn() {
     } while(a===true)
     let buttonsBotom = document.getElementById("buttons-bottom");
     buttonsBotom.style.transform = ("translateY(-1%)");
-    setInterval(() => subtraction(), 3000);   
+    interval = setInterval(subtraction,3000);
     document.getElementById("heal_point").innerHTML = heal_point;
     document.getElementById("eat_point").innerHTML = eat_point;
     document.getElementById("joy_point").innerHTML = joy_point;
 }
 function coinBtn(){
-    coins = coins + 2;
+    if (pause === 0) {
+        coins = coins + 2;
+    } 
     document.getElementById("coins").innerHTML = coins;
 }
 function joyBtn(){
@@ -87,6 +91,18 @@ function healBtn(){
         }
     }
 }
+function shopBtn(){
+    let shopWindow = document.getElementById("shop-block");
+    if (pause === 0) {
+        clearInterval(interval,1000);
+        shopWindow.style.transform = ("translateX(0)");
+        pause = 1;
+    } else{
+        interval = setInterval(subtraction,1000);
+        shopWindow.style.transform = ("translateX(-105%)");
+        pause = 0;
+    }
+}
 function subtraction(){
     joy_point--;
     eat_point--;
@@ -111,4 +127,142 @@ function windowAlertCoin() {
     let windowAlert = document.getElementById("window-alert")
     windowAlert.style = ("z-index: 1; opacity: 1; transition: .5s; background-color: #FF3D3D");
     setTimeout(() => windowAlert.style = ("z-index: -1; opacity 0; transition: .5s"), 3000);
+}
+
+let shopBy = [0,0,0,0,0,0,0,0];
+function shopBlue(){
+    let backColor = document.getElementById("body");
+    if (shopBy[0] === 0) {
+        if (coins >= 50) { 
+            shopBy[0] = 1;
+            backColor.style = ("background-color: #005AFF");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #005AFF");
+    }
+}
+function shopPink(){
+    let backColor = document.getElementById("body");
+    if (shopBy[1] === 0) {
+        if (coins >= 50) { 
+            shopBy[1] = 1;
+            backColor.style = ("background-color: #FF00A8");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #FF00A8");
+    }
+}
+function shopLime(){
+    let backColor = document.getElementById("body");
+    if (shopBy[2] === 0) {
+        if (coins >= 50) { 
+            shopBy[2] = 1;
+            backColor.style = ("background-color: #7EFF00");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #7EFF00");
+    }
+}
+function shopHalfRed(){
+    let backColor = document.getElementById("body");
+    if (shopBy[3] === 0) {
+        if (coins >= 50) { 
+            shopBy[3] = 1;
+            backColor.style = ("background-color: #D07575");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #D07575");
+    }
+}
+function shopTurquoise(){
+    let backColor = document.getElementById("body");
+    if (shopBy[4] === 0) {
+        if (coins >= 50) { 
+            shopBy[4] = 1;
+            backColor.style = ("background-color: #00F0FF");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #00F0FF");
+    }
+}
+function shopPurple(){
+    let backColor = document.getElementById("body");
+    if (shopBy[5] === 0) {
+        if (coins >= 50) { 
+            shopBy[5] = 1;
+            backColor.style = ("background-color: #BA00FF");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #BA00FF");
+    }
+}
+function shopWeakBlue(){
+    let backColor = document.getElementById("body");
+    if (shopBy[6] === 0) {
+        if (coins >= 50) { 
+            shopBy[6] = 1;
+            backColor.style = ("background-color: #485D91");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #485D91");
+    }
+}
+function shopHalfRedTwo(){
+    let backColor = document.getElementById("body");
+    if (shopBy[7] === 0) {
+        if (coins >= 50) { 
+            shopBy[7] = 1;
+            backColor.style = ("background-color: #FF688F");
+            coins = coins - 50;
+            document.getElementById("coins").innerHTML = coins;
+            textWindow = '-50$'
+            windowAlertText();
+        } else{
+            windowAlertCoin();
+        }
+    } else{  
+        backColor.style = ("background-color: #FF688F");
+    }
 }
