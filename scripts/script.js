@@ -12,21 +12,27 @@ function alertBtn() {
     text.style.transform = ("translateY(-5vh)");
 
     let image = document.getElementById("image");
-    let name = window.prompt("Введи имя животного");
-    document.getElementById("name").innerHTML = name;
+    
+    do{
+        let name = window.prompt("Введи имя животного");
+        if(name === ""){
+            b=true;
+        } else{
+            b=false;
+            document.getElementById("name").innerHTML = name;
+        }
+
+    } while (b===true)
     do{
         let type = window.prompt("Выберите тип животного\n 1-кот\n 2-собака\n 3-мышь");
         if (type == 1) {
             image.innerHTML="<img src='img/cat.png'>";
-            alert("Привет " + name);
             a=false;
         } else if (type == 2) {
             image.innerHTML="<img src='img/dog.png'>";
-            alert("Привет " + name);
             a=false;
         } else if (type == 3) {
             image.innerHTML="<img src='img/maus.png'>";
-            alert("Привет " + name);
             a=false;
         } else{
             alert("Вы ввели не правильные параметры");
@@ -131,11 +137,13 @@ function windowAlertCoin() {
 
 let shopBy = [0,0,0,0,0,0,0,0];
 function shopBlue(){
+    let buttonShop = document.getElementById("button-shop1");
     let backColor = document.getElementById("body");
     if (shopBy[0] === 0) {
         if (coins >= 50) { 
             shopBy[0] = 1;
             backColor.style = ("background-color: #005AFF");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
@@ -148,11 +156,13 @@ function shopBlue(){
     }
 }
 function shopPink(){
+    let buttonShop = document.getElementById("button-shop2");
     let backColor = document.getElementById("body");
     if (shopBy[1] === 0) {
         if (coins >= 50) { 
             shopBy[1] = 1;
             backColor.style = ("background-color: #FF00A8");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
@@ -165,11 +175,13 @@ function shopPink(){
     }
 }
 function shopLime(){
+    let buttonShop = document.getElementById("button-shop3");
     let backColor = document.getElementById("body");
     if (shopBy[2] === 0) {
         if (coins >= 50) { 
             shopBy[2] = 1;
             backColor.style = ("background-color: #7EFF00");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
@@ -182,11 +194,13 @@ function shopLime(){
     }
 }
 function shopHalfRed(){
+    let buttonShop = document.getElementById("button-shop4");
     let backColor = document.getElementById("body");
     if (shopBy[3] === 0) {
         if (coins >= 50) { 
             shopBy[3] = 1;
             backColor.style = ("background-color: #D07575");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
@@ -199,11 +213,13 @@ function shopHalfRed(){
     }
 }
 function shopTurquoise(){
+    let buttonShop = document.getElementById("button-shop5");
     let backColor = document.getElementById("body");
     if (shopBy[4] === 0) {
         if (coins >= 50) { 
             shopBy[4] = 1;
             backColor.style = ("background-color: #00F0FF");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
@@ -216,11 +232,13 @@ function shopTurquoise(){
     }
 }
 function shopPurple(){
+    let buttonShop = document.getElementById("button-shop6");
     let backColor = document.getElementById("body");
     if (shopBy[5] === 0) {
         if (coins >= 50) { 
             shopBy[5] = 1;
             backColor.style = ("background-color: #BA00FF");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
@@ -233,11 +251,13 @@ function shopPurple(){
     }
 }
 function shopWeakBlue(){
+    let buttonShop = document.getElementById("button-shop7");
     let backColor = document.getElementById("body");
     if (shopBy[6] === 0) {
         if (coins >= 50) { 
             shopBy[6] = 1;
             backColor.style = ("background-color: #485D91");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
@@ -250,11 +270,13 @@ function shopWeakBlue(){
     }
 }
 function shopHalfRedTwo(){
+    let buttonShop = document.getElementById("button-shop8");
     let backColor = document.getElementById("body");
     if (shopBy[7] === 0) {
         if (coins >= 50) { 
             shopBy[7] = 1;
             backColor.style = ("background-color: #FF688F");
+            buttonShop.style = ("color: rgba(0,0,0,0)");
             coins = coins - 50;
             document.getElementById("coins").innerHTML = coins;
             textWindow = '-50$'
